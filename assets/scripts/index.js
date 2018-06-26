@@ -7,8 +7,10 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const markBoard = require('./board.js')
+const newGameButton = require('./newgame.js')
 
 $(() => {
   authEvents.addHandlers()
   markBoard()
+  newGameButton()
 })
