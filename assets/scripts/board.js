@@ -1,8 +1,11 @@
 'use strict'
 
+const winner = require('./outcome.js')
+
 const board = function () {
   let boolstuff = false
   $('#board td').on('click', (event) => {
+
     if (event.target.innerText === '') {
       boolstuff = !boolstuff
       if (boolstuff) {
@@ -10,7 +13,7 @@ const board = function () {
       } else {
         event.target.innerText = 'O'
       }
-    }
+    } winner()
   })
 }
 
