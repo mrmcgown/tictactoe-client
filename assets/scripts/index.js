@@ -13,4 +13,5 @@ $(() => {
   authEvents.addHandlers()
   markBoard()
   newGameButton()
+  $('#gameElements, #sign-out, #changePassButton').hide()
 })

@@ -5,6 +5,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
+  $('#signUp').modal('hide')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -17,6 +18,9 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
+  $('#sign-out, #changePassButton, #gameElements').show()
+  $('#signUpButton, #signInButton').hide()
+  $('#signIn').modal('hide')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -42,6 +46,8 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
+  $('#sign-out, #changePassButton, #gameElements').hide()
+  $('#signUpButton, #signInButton').show()
   console.log('signOutSuccess ran. Data is :')
   store.user = null
 }
