@@ -5,7 +5,13 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const authEvents = require('./auth/events')
+const markBoard = require('./board.js')
+const newGameButton = require('./newgame.js')
 
 $(() => {
-  // your JS code goes here
+  authEvents.addHandlers()
+  markBoard()
+  newGameButton()
+  $('#gameElements, #sign-out, #changePassButton').hide()
 })
