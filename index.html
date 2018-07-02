@@ -10,7 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  </head>
+    </head>
 <body>
 
 <p id="message"></p>
@@ -22,24 +22,63 @@
     What up bruh? I'm Ruby Jesus, and this is my Tic-Tac-Toe game. Click any square on the board to begin playing.
   </div>
   <img id="rubyJesus" src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/12825/thumb_selfie.jpg" alt="Danny Kirschner">
-  <button id="new-game">New Game</button>
+  <form class="games" id="new-game">
+      <div class="form-group">
+      </div>
+      <button class="btn btn-default" type="submit">New Game</button>
+  </form>
   <br>
   <br>
+  <!--
+          <h2>Get All Books</h2>
+      <form class="books" id="books-search">
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-default">Get All Books</button>
+      </form>
+  -->
+  <!--
+     <h2>Get One Book</h2>
+      <form class="books" id="book-search">
+        <div class="form-group">
+          <input type="text" name="book[id]" placeholder="Resource ID Here">
+        </div>
+        <button type="submit" class="btn btn-default">Get Book</button>
+      </form>
+  -->
+  <!--
+     <h2>Update One Book</h2>
+      <form class="books" id="book-update">
+        <div class="form-group">
+          <input type="text" name="book[id]" id="book-id-update" placeholder="Resource ID Here">
+          <input type="text" name="book[title]" placeholder="Resource Title Here">
+          <input type="text" name="book[author]" placeholder="Resource Author Here">
+        </div>
+        <button type="submit" class="btn btn-default">Update Book</button>
+      </form>
+  -->
+  <!--
+      <form>
+        <input name="game[cell][index]" type="text" value="0">
+        <input name="game[cell][value]" type="text" value="x">
+        <input name="game[over]" type="text" value="false">
+      </form>
+  -->
   <table border="1" id="board">
     <tr>
-      <td id="0"></td>
-      <td id="1"></td>
-      <td id="2"></td>
+      <td id="0" data-cell-index='0'></td>
+      <td id="1" data-cell-index='1'></td>
+      <td id="2" data-cell-index='2'></td>
     </tr>
     <tr>
-      <td id="3"></td>
-      <td id="4"></td>
-      <td id="5"></td>
+      <td id="3" div data-cell-index='3'></td>
+      <td id="4" div data-cell-index='4'></td>
+      <td id="5" data-cell-index='5'></td>
     </tr>
     <tr>
-      <td id="6"></td>
-      <td id="7"></td>
-      <td id="8"></td>
+      <td id="6" data-cell-index='6'></td>
+      <td id="7" data-cell-index='7'></td>
+      <td id="8" data-cell-index='8'></td>
     </tr>
   </table>
 </div>
