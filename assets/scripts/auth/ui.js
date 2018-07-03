@@ -18,11 +18,12 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
-  $('#sign-out, #changePassButton, #gameElements').show()
+  $('#sign-out, #changePassButton, #gameElements, #view-game-history, #view-current-games').show()
   $('#signUpButton, #signInButton').hide()
   $('#signIn').modal('hide')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
+  $('#board td').off('click')
 }
 
 const signInFailure = function (error) {

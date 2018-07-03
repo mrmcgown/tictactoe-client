@@ -3,13 +3,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   margin: auto;
-  padding: 5%;
+  padding: 1% 25%;
 }
 
 #board {
   width: 300px;
   height: 300px;
   text-align: center;
+}
+
+#message {
+  width: 55%;
 }
 
 #rubyJesus {
@@ -27,6 +31,8 @@ table td {
   border: 5px solid black;
   font-size: 250%;
 }
+
+
 
 #message2 {
   background: #cecece;
@@ -66,4 +72,20 @@ td {
 
 #message2 {
   text-align: center;
+}
+
+#sign-out {
+  float: left;
+}
+
+#signUpButton {
+  padding: 20%;
+}
+
+#signInButton {
+  padding: 20%
+}
+
+#changePassButton {
+  float: left;
 }
