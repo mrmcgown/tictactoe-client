@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const newGameSuccess = function (data) {
+  store.game = data.game
   $('#message').text('Started a new game successfully!')
   $('#message').css('background-color', 'green')
   console.log('newGameSuccess ran. Data is :', data)
