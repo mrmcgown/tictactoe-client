@@ -7,8 +7,6 @@
 // require('./example')
 const gameEvents = require('./game-api/game-events')
 const authEvents = require('./auth/events')
-// const markBoard = require('./board.js')
-// const newGameButton = require('./newgame.js')
 
 $(() => {
   gameEvents.addHandlers()
