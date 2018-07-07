@@ -38,7 +38,7 @@ const onNewGame = function (event) {
 
   $('#board td').text('')
   $('#board td').on('click', onGameMove)
-  $('#message2').text("It's new-game time. Good luck!")
+  $('#message2').text("It's new-game time. X goes first. Good luck!")
   gameOver = false
   api.newGame()
     .then(ui.newGameSuccess)
@@ -55,6 +55,7 @@ const onGameMove = function (event) {
       event.target.innerText = 'X'
       gameMovePatch.game.cell.index = event.target.dataset.cellIndex
       gameMovePatch.game.cell.value = "x"
+      $('#message2').text("O's turn. Go O, go!")
       winner()
       if (gameOver === true) {
         gameMovePatch.game.over = true
@@ -67,6 +68,7 @@ const onGameMove = function (event) {
       event.target.innerText = 'O'
       gameMovePatch.game.cell.index = event.target.dataset.cellIndex
       gameMovePatch.game.cell.value = "o"
+      $('#message2').text("X's turn. Don't mess this up!")
       winner()
       if (gameOver === true) {
         gameMovePatch.game.over = true
@@ -79,13 +81,13 @@ const onGameMove = function (event) {
   }
 }
 
-const onViewGameHistory = function (event) {
+const onViewFinishedGames = function (event) {
   event.preventDefault()
-  console.log('game history ran')
+  console.log('view finished games ran')
 
-  api.viewGameHistory()
-    .then(ui.viewGameHistorySuccess)
-    .catch(ui.viewGameHistoryFailure)
+  api.viewFinishedGames()
+    .then(ui.viewFinishedGamesSuccess)
+    .catch(ui.viewFinishedGamesFailure)
 }
 
 const onViewCurrentGames = function (event) {
@@ -100,7 +102,7 @@ const onViewCurrentGames = function (event) {
 const addHandlers = () => {
   $('#new-game').on('submit', onNewGame)
   $('#board td').on('click', onGameMove)
-  $('#view-finished-games').on('click', onViewGameHistory)
+  $('#view-finished-games').on('click', onViewFinishedGames)
   $('#view-current-games').on('click', onViewCurrentGames)
 }
 

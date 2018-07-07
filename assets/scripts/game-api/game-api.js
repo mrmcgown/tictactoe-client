@@ -25,7 +25,7 @@ const gameMove = function (data) {
   })
 }
 
-const viewGameHistory = function (data) {
+const viewFinishedGames = function (data) {
   console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/games?over=true',
@@ -64,7 +64,7 @@ const showOldGame = function (data) {
 module.exports = {
   newGame,
   gameMove,
-  viewGameHistory,
+  viewFinishedGames,
   viewCurrentGames,
   showOldGame
 }
