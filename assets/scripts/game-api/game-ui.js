@@ -6,6 +6,7 @@ const newGameSuccess = function (data) {
   store.game = data.game
   $('#message').text('Started a new game successfully!')
   $('#message').css('background-color', 'green')
+  $('#board').show()
   console.log('newGameSuccess ran. Data is :', data)
 }
 
@@ -27,32 +28,26 @@ const gameMoveFailure = function (error) {
   console.log('gameMoveFailure ran. Error is :', error)
 }
 
-const viewGameHistorySuccess = function (data) {
+const viewFinishedGamesSuccess = function (data) {
   $('#message').text('Accessed game history successfully!')
+  for (let index = 0; index < data.games.length; index++) {
+    $('#message3').append(`<p>Game ${data.games[index].id} | Cells --> ${JSON.stringify(data.games[index].cells)}</p>`)
+  }
   $('#message').css('background-color', 'green')
-  console.log('gameHistorySuccess ran. Data is :', data)
+  console.log('viewFinishedGamesSuccess ran. Data is :', data)
 }
 
-const viewGameHistoryFailure = function (error) {
-  $('#message').text('Error on game history access attempt')
+const viewFinishedGamesFailure = function (error) {
+  $('#message').text('Error on view finished games attempt')
   $('#message').css('background-color', 'red')
-  console.log('gameHistoryFailure ran. Error is :', error)
-}
-
-const showOldGameSuccess = function (data) {
-  $('#message').text('Accessed old game successfully!')
-  $('#message').css('background-color', 'green')
-  console.log('showOldGameSuccess ran. Data is :', data)
-}
-
-const showOldGameFailure = function (error) {
-  $('#message').text('Error on show old game attempt')
-  $('#message').css('background-color', 'red')
-  console.log('showOldGameFailure ran. Error is :', error)
+  console.log('viewFinishedGamesFailure ran. Error is :', error)
 }
 
 const viewCurrentGamesSuccess = function (data) {
   $('#message').text('Accessed current games successfully!')
+  for (let index = 0; index < data.games.length; index++) {
+    $('#message4').append(`<p>Game ${data.games[index].id} | Cells --> ${JSON.stringify(data.games[index].cells)}</p>`)
+  }
   $('#message').css('background-color', 'green')
   console.log('viewCurrentGamesSuccess ran. Data is :', data)
 }
@@ -68,10 +63,8 @@ module.exports = {
   newGameFailure,
   gameMoveSuccess,
   gameMoveFailure,
-  viewGameHistorySuccess,
-  viewGameHistoryFailure,
-  showOldGameSuccess,
-  showOldGameFailure,
+  viewFinishedGamesSuccess,
+  viewFinishedGamesFailure,
   viewCurrentGamesSuccess,
   viewCurrentGamesFailure
 }
