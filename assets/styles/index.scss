@@ -1,9 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-#belowNav {
-  margin: auto;
-  padding: 1% 25%;
+// #belowNav {
+//   margin: auto;
+//   padding: 1% 25%;
+// }
+
+.navbar, h2, .navbarText, #signInButton, #optionsText, #signUpButton {
+background-color: #333;
+color: rgb(253, 250, 250)
 }
 
 #board {
@@ -25,7 +30,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: auto;
 }
 
-table {
+#gameElements {
+  // margin: 0px 0px;
   border-collapse: collapse;
   border-style: hidden;
 }
@@ -63,6 +69,11 @@ table td {
   right: 20px;
 }
 
+#optionsText, #signInButton, #signUpButton {
+  padding: 30px 10px 0 0;
+  font-size: 14pt
+}
+
 tr {
   height: 100px
 }
@@ -74,9 +85,3 @@ td {
 #message2 {
   text-align: center;
 }
-
-// #sign-out {
-// }
-
-// #changePassButton {
-// }

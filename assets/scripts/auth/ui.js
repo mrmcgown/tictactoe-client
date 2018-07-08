@@ -3,22 +3,22 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully').show().delay(2000).fadeOut()
+  $('#message').text('Signed up successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
   $('#signUp').modal('hide')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function (error) {
-  $('#message').text('Error on sign up').show().delay(2000).fadeOut()
+  $('#message').text('Error on sign up').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'red')
   console.log('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully').show().delay(2000).fadeOut()
+  $('#message').text('Signed in successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
-  $('#sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games').show()
+  $('#options, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games').show()
   $('#message2').text('Click New Game to begin playing.').fadeIn()
   $('#signUpButton, #signInButton').hide()
   $('#signIn').modal('hide')
@@ -27,34 +27,36 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Error on sign in').show().delay(2000).fadeOut()
+  $('#message').text('Error on sign in').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'red')
   console.log('signInFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function (data) {
-  $('#message').text('Changed password successfully').show().delay(2000).fadeOut()
+  $('#message').text('Changed password successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
+  $('#changePassword').modal('hide')
   console.log('changePasswordSuccess ran. Data is :', data)
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Error on change password').show().delay(2000).fadeOut()
+  $('#message').text('Error on change password').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'red')
   console.log('changePasswordFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed out successfully').show().delay(2000).fadeOut()
+  $('#message').text('Signed out successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
-  $('#sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games').hide()
+  $('#message2').text("What up bruh? I'm Ruby Jesus, and this is my Tic-Tac-Toe game. Sign in to get started!")
+  $('#sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games, #options').hide()
   $('#signUpButton, #signInButton').show()
   console.log('signOutSuccess ran. Data is :')
   store.user = null
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Error on sign out').show().delay(2000).fadeOut()
+  $('#message').text('Error on sign out').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'red')
   console.log('signOutFailure ran. Error is :', error)
 }

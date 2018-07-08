@@ -35,7 +35,7 @@ let gameMovePatch = {
 const onNewGame = function (event) {
   event.preventDefault()
   console.log('new game started')
-
+  $('#board td').css('border-color', 'black')
   $('#board td').text('')
   $('#board td').on('click', onGameMove)
   $('#message2').text("It's new-game time. X goes first. Good luck!")
@@ -60,6 +60,7 @@ const onGameMove = function (event) {
       if (gameOver === true) {
         gameMovePatch.game.over = true
         console.log(gameMovePatch)
+        $('#board td').css('border-color', 'green')
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
@@ -73,6 +74,7 @@ const onGameMove = function (event) {
       if (gameOver === true) {
         gameMovePatch.game.over = true
         console.log(gameMovePatch)
+        $('#board td').css('border-color', 'gold')
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
