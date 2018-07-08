@@ -49,7 +49,7 @@ const signOutSuccess = function () {
   $('#message').text('Signed out successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
   $('#message2').text("What up bruh? I'm Ruby Jesus, and this is my Tic-Tac-Toe game. Sign in to get started!")
-  $('#sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games, #options').hide()
+  $('#newGameButton, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games, #options').hide()
   $('#signUpButton, #signInButton').show()
   console.log('signOutSuccess ran. Data is :')
   store.user = null
