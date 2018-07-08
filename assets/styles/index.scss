@@ -5,39 +5,59 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   margin: auto;
 //   padding: 1% 25%;
 // }
+@media only screen and (max-width: 770px) {
+  body {
+    background-color: lightblue;
+  }
+  #signUpButton, #signInButton {
+    top: -20px;
+  }
+  #board {
+
+  }
+}
+
+#newGameButton {
+  background-color: black;
+  color: rgb(253, 250, 250);
+  position: relative;
+  transition: .5s ease;
+  top: 40px;
+  left: 515px
+}
 
 .navbar, h2, .navbarText, #signInButton, #optionsText, #signUpButton {
-background-color: #333;
-color: rgb(253, 250, 250)
+  background-color: #333;
+  color: rgb(253, 250, 250)
 }
 
 #board {
+  position: relative;
+  top: -150px;
+  left: 100px;
   width: 300px;
   height: 300px;
   text-align: center;
+  border-collapse: collapse;
+  border-style: hidden;
 }
 
 #message {
-  width: 55%;
+  width: 100%;
+  // height: 50%;
   position: fixed;
   float: left;
   color: rgb(201, 201, 201);
 }
 
 #rubyJesus {
-  margin: -20px 270px;
+  margin: -20px 450px;
   width: 265px;
   height: auto;
 }
 
-#gameElements {
-  // margin: 0px 0px;
-  border-collapse: collapse;
-  border-style: hidden;
-}
-
 table td {
-  border: 5px solid black;
+  border: 8px solid black;
   font-size: 250%;
 }
 
@@ -51,6 +71,8 @@ table td {
   max-width: 400px;
   padding: 15px;
   position: relative;
+  left: 180px;
+  height: 100px
 }
 
 #message2 p {
@@ -79,6 +101,7 @@ tr {
 }
 
 td {
+  font-style: bold;
   width: 100px
 }
 

@@ -11,5 +11,7 @@ const authEvents = require('./auth/events')
 $(() => {
   gameEvents.addHandlers()
   authEvents.addHandlers()
-  $('#gameElements, #board, #sign-out, #changePassButton, #view-finished-games, #view-current-games, #options').hide()
+  $('#sign-out, #changePassButton, #view-finished-games, #view-current-games, #options').hide()
 })
+
+// #gameElements, #board, newGameButton

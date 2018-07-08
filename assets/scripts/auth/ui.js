@@ -18,7 +18,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
-  $('#options, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games').show()
+  $('#newGameButton, #options, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games').show()
   $('#message2').text('Click New Game to begin playing.').fadeIn()
   $('#signUpButton, #signInButton').hide()
   $('#signIn').modal('hide')

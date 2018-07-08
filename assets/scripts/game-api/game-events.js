@@ -12,13 +12,16 @@ const winner = function () {
     gameOver = true
     $('#message2').text("Your 'toe game is on fleek! X wins!")
     $('#board td').off('click')
+    $('#board td').css('border-color', 'green')
   } else if ($('#0, #3, #6').text() === "OOO" || $('#1, #4, #7').text() === "OOO" || $('#2, #5, #8').text() === "OOO" || $('#0, #1, #2').text() === "OOO" || $('#3, #4, #5').text() === "OOO" || $('#6, #7, #8').text() === "OOO" || $('#0, #4, #8').text() === "OOO" || $('#2, #4, #6').text() === "OOO") {
     gameOver = true
     $('#message2').text('Oh boy, O wins!')
     $('#board td').off('click')
+    $('#board td').css('border-color', 'gold')
   } else if (($('#0').text() !== "" && $('#1').text() !== "" && $('#2').text() !== "" && $('#3').text() !== "" && $('#4').text() !== "" && $('#5').text() !== "" && $('#6').text() !== "" && $('#7').text() !== "" && $('#8').text() !== "")) {
     gameOver = true
     $('#message2').text("Aw nah, it's a draw!")
+    $('#board td').css('border-color', 'red')
   }
 }
 
@@ -60,7 +63,6 @@ const onGameMove = function (event) {
       if (gameOver === true) {
         gameMovePatch.game.over = true
         console.log(gameMovePatch)
-        $('#board td').css('border-color', 'green')
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
@@ -74,7 +76,6 @@ const onGameMove = function (event) {
       if (gameOver === true) {
         gameMovePatch.game.over = true
         console.log(gameMovePatch)
-        $('#board td').css('border-color', 'gold')
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
