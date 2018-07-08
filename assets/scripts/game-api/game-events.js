@@ -7,6 +7,7 @@ const ui = require('./game-ui')
 
 let boolstuff
 let gameOver = false
+
 const winner = function () {
   if ($('#0, #3, #6').text() === "XXX" || $('#1, #4, #7').text() === "XXX" || $('#2, #5, #8').text() === "XXX" || $('#0, #1, #2').text() === "XXX" || $('#3, #4, #5').text() === "XXX" || $('#6, #7, #8').text() === "XXX" || $('#0, #4, #8').text() === "XXX" || $('#2, #4, #6').text() === "XXX") {
     gameOver = true
@@ -107,6 +108,7 @@ const addHandlers = () => {
   $('#board td').on('click', onGameMove)
   $('#view-finished-games').on('click', onViewFinishedGames)
   $('#view-current-games').on('click', onViewCurrentGames)
+  $('#gameElements, #board, #newGameButton, #sign-out, #changePassButton, #view-finished-games, #view-current-games, #options').hide()
 }
 
 module.exports = {
