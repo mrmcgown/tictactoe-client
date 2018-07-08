@@ -7,7 +7,6 @@ const newGameSuccess = function (data) {
   $('#message').text('Started a new game successfully!')
   $('#message').css('background-color', 'green')
   $('#board').show()
-  console.log('newGameSuccess ran. Data is :', data)
 }
 
 const newGameFailure = function (error) {
@@ -19,7 +18,6 @@ const newGameFailure = function (error) {
 const gameMoveSuccess = function (data) {
   $('#message').text('game move successful!')
   $('#message').css('background-color', 'green')
-  console.log('gameMoveSuccess ran. Data is :', data)
 }
 
 const gameMoveFailure = function (error) {
@@ -34,7 +32,6 @@ const viewFinishedGamesSuccess = function (data) {
     $('#message3').append(`<p>Game ${data.games[index].id} | Cells --> ${JSON.stringify(data.games[index].cells)}</p>`)
   }
   $('#message').css('background-color', 'green')
-  console.log('viewFinishedGamesSuccess ran. Data is :', data)
 }
 
 const viewFinishedGamesFailure = function (error) {
@@ -49,7 +46,6 @@ const viewCurrentGamesSuccess = function (data) {
     $('#message4').append(`<p>Game ${data.games[index].id} | Cells --> ${JSON.stringify(data.games[index].cells)}</p>`)
   }
   $('#message').css('background-color', 'green')
-  console.log('viewCurrentGamesSuccess ran. Data is :', data)
 }
 
 const viewCurrentGamesFailure = function (error) {

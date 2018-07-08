@@ -38,7 +38,6 @@ let gameMovePatch = {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  console.log('new game started')
   $('#board td').css('border-color', 'black')
   $('#board td').text('')
   $('#board td').on('click', onGameMove)
@@ -52,7 +51,6 @@ const onNewGame = function (event) {
 
 const onGameMove = function (event) {
   event.preventDefault()
-  console.log(gameOver)
   if (event.target.innerText === '') {
     boolstuff = !boolstuff
     if (boolstuff) {
@@ -63,7 +61,6 @@ const onGameMove = function (event) {
       winner()
       if (gameOver === true) {
         gameMovePatch.game.over = true
-        console.log(gameMovePatch)
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
@@ -76,7 +73,6 @@ const onGameMove = function (event) {
       winner()
       if (gameOver === true) {
         gameMovePatch.game.over = true
-        console.log(gameMovePatch)
       }
       api.gameMove(gameMovePatch)
         .then(ui.gameMoveSuccess)
@@ -87,7 +83,6 @@ const onGameMove = function (event) {
 
 const onViewFinishedGames = function (event) {
   event.preventDefault()
-  console.log('view finished games ran')
 
   api.viewFinishedGames()
     .then(ui.viewFinishedGamesSuccess)
@@ -96,7 +91,6 @@ const onViewFinishedGames = function (event) {
 
 const onViewCurrentGames = function (event) {
   event.preventDefault()
-  console.log('view current games ran')
 
   api.viewCurrentGames()
     .then(ui.viewCurrentGamesSuccess)

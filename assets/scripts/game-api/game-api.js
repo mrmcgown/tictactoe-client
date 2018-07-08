@@ -26,7 +26,6 @@ const gameMove = function (data) {
 }
 
 const viewFinishedGames = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/games?over=true',
     method: 'GET',
@@ -38,7 +37,6 @@ const viewFinishedGames = function (data) {
 }
 
 const viewCurrentGames = function (data) {
-  console.log('data is', data)
   return $.ajax({
     url: config.apiUrl + '/games?over=false',
     method: 'GET',
@@ -50,7 +48,6 @@ const viewCurrentGames = function (data) {
 }
 
 const showOldGame = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/games/:id',
     method: 'GET',

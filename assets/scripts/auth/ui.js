@@ -6,7 +6,6 @@ const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
   $('#signUp').modal('hide')
-  console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function (error) {
@@ -22,7 +21,6 @@ const signInSuccess = function (data) {
   $('#message2').text('Click New Game to begin playing.').fadeIn()
   $('#signUpButton, #signInButton').hide()
   $('#signIn').modal('hide')
-  console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
 
@@ -36,7 +34,6 @@ const changePasswordSuccess = function (data) {
   $('#message').text('Changed password successfully').show().delay(1500).fadeOut()
   $('#message').css('background-color', 'green')
   $('#changePassword').modal('hide')
-  console.log('changePasswordSuccess ran. Data is :', data)
 }
 
 const changePasswordFailure = function (error) {
@@ -51,7 +48,6 @@ const signOutSuccess = function () {
   $('#message2').text("What up bruh? I'm Ruby Jesus, and this is my Tic-Tac-Toe game. Sign in to get started!")
   $('#newGameButton, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games, #options').hide()
   $('#signUpButton, #signInButton').show()
-  console.log('signOutSuccess ran. Data is :')
   store.user = null
 }
 
