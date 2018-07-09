@@ -49,6 +49,7 @@ const signOutSuccess = function () {
   $('#newGameButton, #sign-out, #changePassButton, #gameElements, #view-finished-games, #view-current-games, #options').hide()
   $('#signUpButton, #signInButton').show()
   store.user = null
+  $('#board td').text('')
 }
 
 const signOutFailure = function (error) {

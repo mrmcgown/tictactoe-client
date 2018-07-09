@@ -1,10 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// #belowNav {
-//   margin: auto;
-//   padding: 1% 25%;
-// }
+.belowNav {
+  margin:0 auto;
+}
 @media only screen and (max-width: 770px) {
   #signUpButton, #signInButton {
     top: -20px;
