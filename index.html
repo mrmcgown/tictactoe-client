@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ruby Jesus Tic-Tac-Toe</title>
+      <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-left">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <li>
+            <h2>Ruby Jesus Tic-Tac-Toe</h2>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" id="signUpButton" data-toggle="modal" data-target="#signUp">
+                Sign Up
+            </a>
+          </li>
+          <li>
+            <a href="#" id='signInButton' data-toggle="modal" data-target="#signIn">
+              || Sign In
+              </a>
+          </li>
+          <li class="dropdown" id="options">
+              <a href="#" id="optionsText" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Options
+                <span class="caret">
+                </span>
+              </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#" id="view-current-games" data-toggle="modal" data-target="#currentGames">
+                View Current Games
+                </a>
+            </li>
+            <li><a href="#" id="view-finished-games" data-toggle="modal" data-target="#finishedGames">
+                View Finished Games
+                </a>
+            </li>
+            <li>
+              <a href="#" id="changePassButton" data-toggle="modal" data-target="#changePassword">
+                Change Password
+              </a>
+            </li>
+            <li role="separator" class="divider">
+            </li>
+            <li>
+              <a href="#" id="sign-out">Sign out</button>
+              </a>
+            </li>
+          </ul>
+          </li>
+        </ul>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="belowNav">
+
+<!-- auth status message -->
+  <p id="message"></p>
+
+  <br>
+
+  <br>
+    <!-- Danny's message -->
+    <p id="message2">What up bruh? I'm Ruby Jesus, and this is my Tic-Tac-Toe game. Sign in to get started!</p>
+    <!-- Danny's picture -->
+    <div>
+      <img id="rubyJesus" src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/12825/thumb_selfie.jpg" alt="Danny Kirschner">
+    </div>
+    <form class="games" id="new-game">
+        <div class="form-group">
+        </div>
+        <button id="newGameButton" class="btn btn-lg" type="submit">New Game</button>
+    </form>
+
+  <!-- Modals set here instead of inside of navbar to make sure they show on the whole screen -->
+  <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up" class="border">
+              <fieldset>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <input type="submit" value="submit">
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in" class="border">
+              <fieldset>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="submit" value="submit">
+              </fieldset>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="currentGames" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Current Games</h4>
+          </div>
+          <div class="modal-body">
+            <p id="message4"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="finishedGames" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Finished Games</h4>
+          </div>
+          <div class="modal-body">
+            <p id="message3"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+          </div>
+          <div class="modal-body">
+            <form id="change-password" class="border">
+              <fieldset>
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                <input type="submit" value="submit">
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="currentGames" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Current Games</h4>
+          </div>
+          <div class="modal-body">
+            <p id="message4"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- board -->
+  <div id="gameElements">
+    <table border="1" id="board">
+      <tr>
+        <td id="0" data-cell-index='0'></td>
+        <td id="1" data-cell-index='1'></td>
+        <td id="2" data-cell-index='2'></td>
+      </tr>
+      <tr>
+        <td id="3" div data-cell-index='3'></td>
+        <td id="4" div data-cell-index='4'></td>
+        <td id="5" data-cell-index='5'></td>
+      </tr>
+      <tr>
+        <td id="6" data-cell-index='6'></td>
+        <td id="7" data-cell-index='7'></td>
+        <td id="8" data-cell-index='8'></td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  </div>
+</body>
+</html>
