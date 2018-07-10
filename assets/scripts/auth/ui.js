@@ -21,6 +21,7 @@ const signInSuccess = function (data) {
   $('#message2').text('Click New Game to begin playing.').fadeIn()
   $('#signUpButton, #signInButton').hide()
   $('#signIn').modal('hide')
+  $('#board').hide()
   store.user = data.user
 }
 
